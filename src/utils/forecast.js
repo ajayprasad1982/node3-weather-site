@@ -9,9 +9,9 @@ const forecast=(latitude,longitude,callback)=>{
         callback(body.error.info,undefined)
        }
        else{
-       const {temperature:temp,feelslike:fl}=body.current
-       //log(current.weather_descriptions[0]+". It is currently "+current.temperature+" degrees out.It is feels like "+current.feelslike+" degrees out.")
-       callback(undefined,body.current.weather_descriptions[0]+". It is currently "+temp+" degrees out.It is feels like "+fl+" degrees out."
+      
+       const {temperature:temp,feelslike:fl,humidity:hm}=body.current
+       callback(undefined,body.current.weather_descriptions[0]+". It is currently "+temp+" degrees out.It is feels like "+fl+" degrees out.Humidity is "+hm+"%"
          )
        }
     })
